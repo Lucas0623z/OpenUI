@@ -1,0 +1,35 @@
+name: Build Windows Installer
+
+on:
+  push:
+    tags:
+      - 'v*'        # 推一个 v 开头的 tag（如 v0.1.0）就触发
+  workflow_dispatch: # 也支持在 Actions 页手动触发
+
+permissions:
+  contents: write    # 发布 Release 需要写权限
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # CI 在海外，用官方源更快（仓库里的 .npmrc 指向国内镜像，本地用）
+      - name: Use default registry on CI
+        shell: pwsh
+        run: if (Test-Path .npmrc) { Remove-Item .npmrc }
+
+      - run: npm install
+
+      - run: npm run build
+
+      - name: Package and publish installer to Release
+        shell: pwsh
+        run: npx electron-builder --win --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

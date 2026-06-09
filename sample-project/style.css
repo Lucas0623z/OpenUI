@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  color: #1f2937;
+  background: #f5f6f8;
+}
+
+.hero {
+  text-align: center;
+  padding: 64px 24px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.hero__title {
+  font-size: 36px;
+  margin: 0 0 12px;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0 0 24px;
+}
+
+.cta {
+  background: #fff;
+  color: #6366f1;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.content {
+  max-width: 880px;
+  margin: 40px auto;
+  display: flex;
+  gap: 24px;
+  padding: 0 24px;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #4f46e5;
+}
+
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: #9ca3af;
+}

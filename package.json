@@ -1,0 +1,62 @@
+{
+  "name": "openui",
+  "version": "0.1.0",
+  "description": "OpenUI - a visual editor that writes your edits back to the source",
+  "main": "out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "dist": "electron-vite build && electron-builder --win"
+  },
+  "dependencies": {
+    "node-html-parser": "^6.1.13",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.2.9",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.3.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "i18next": "^23.16.8",
+    "monaco-editor": "^0.55.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.2.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "zustand": "^5.0.2"
+  },
+  "build": {
+    "appId": "com.openui.app",
+    "productName": "OpenUI",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "publish": {
+      "provider": "github"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "OpenUI"
+    }
+  }
+}
