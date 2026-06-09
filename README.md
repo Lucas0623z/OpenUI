@@ -1,6 +1,10 @@
-# OpenUI
+<p align="center">
+  <img src="docs/logo.png" width="96" alt="OpenUI" />
+</p>
 
-Like browser F12 — but your edits write back to the source.
+<h1 align="center">OpenUI</h1>
+
+<p align="center">Like browser F12 — but your edits write back to the source.</p>
 
 OpenUI is a desktop visual editor for front-end projects. Open a folder, inspect
 any element the way you would in devtools, and OpenUI points you at the exact
